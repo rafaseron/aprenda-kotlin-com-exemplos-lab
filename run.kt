@@ -35,6 +35,43 @@ fun main() {
     } while(testeNome == "marcos")
 
   //WORKING WITH ARRAYS
-  // FOR LOOPS IS THE BEST WAY TO JUMP THROUGH OF THE ELEMENTS
+    val nomes = arrayOf("rafael", "marcos", "adalberto")
+    print("o primeiro nome (elemento 0) é: ")
+    println(nomes[0])
 
+    println("agora vamos mudar o elemento 0 para patricia")
+    nomes[0] = "patricia"
+    print("sua saida agora é: ")
+    println(nomes[0])
+
+    // função nativa de arrays
+    print("o tamanho do array, com .size é: ")
+    println(nomes.size)
+
+    // check if and element exists
+    if ("rafael" in nomes){
+        println("ele existe no banco de dados")
+    } else{
+        println("rafael não existe mais no nosso banco de dados")
+    }
+
+
+
+  // FOR LOOPS IS THE BEST WAY TO JUMP THROUGH OF THE ELEMENTS
+    // agora que já vimos como checkar se um elemento existe em um array, vamos então percorre-lo por completo
+    println("PERCORRENDO O ARRAY INTEIRO UTILIZANDO FOR")
+    for (i in nomes){
+        println(i)
+    }
+
+    //RANGES só pra brincar ne
+    for (i in 'a'..'z'){
+        print("amazon é de A a ")
+        println(i)
+    }
+
+    //KOTLIN FUNCTIONS
+    // COLEÇÕES EM KOTLIN
+
+    // KOTLIN CLASSES
 }
