@@ -55,8 +55,6 @@ fun main() {
         println("rafael não existe mais no nosso banco de dados")
     }
 
-
-
   // FOR LOOPS IS THE BEST WAY TO JUMP THROUGH OF THE ELEMENTS
     // agora que já vimos como checkar se um elemento existe em um array, vamos então percorre-lo por completo
     println("PERCORRENDO O ARRAY INTEIRO UTILIZANDO FOR")
@@ -71,7 +69,29 @@ fun main() {
     }
 
     //KOTLIN FUNCTIONS
+    fun frasePronta(){
+        var nome1 = nomes[0]
+        var nome2 = nomes[1]
+        print("o primeiro nome é $nome1 e o segundo é o $nome2")
+    }
+    frasePronta()
+
+    //agora passando argumentos
+    fun outraFrase(nome3: String, nome4: String){
+        println("Os dois nomes são: $nome3 + $nome4")
+    }
+    outraFrase("joao", "maria")
+
+    //agora vamos retonar um resultado
+    fun soma (valor1: Int, valor2: Int): Int{
+        return(valor1+valor2)
+    }
+    println("agora vamos testar a função que retorna resultados")
+    var resultado = soma(5,2)
+    println(resultado)
+
     // COLEÇÕES EM KOTLIN
+
 
     // KOTLIN CLASSES
 }
