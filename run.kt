@@ -70,8 +70,8 @@ fun main() {
 
     //KOTLIN FUNCTIONS
     fun frasePronta(){
-        var nome1 = nomes[0]
-        var nome2 = nomes[1]
+        val nome1 = nomes[0]
+        val nome2 = nomes[1]
         print("o primeiro nome é $nome1 e o segundo é o $nome2")
     }
     frasePronta()
@@ -87,7 +87,7 @@ fun main() {
         return(valor1+valor2)
     }
     println("agora vamos testar a função que retorna resultados")
-    var resultado = soma(5,2)
+    val resultado = soma(5,2)
     println(resultado)
 
     // COLEÇÕES EM KOTLIN
