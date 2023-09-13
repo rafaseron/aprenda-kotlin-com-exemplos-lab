@@ -204,6 +204,7 @@ fun main() {
      */
 
     // VAMOS CRIAR UMA CLASSE COM CONSTRUTOR
+    //usando construtor, não precisamos armazenar nada por padrão
     class Empregado2(nome:String, funcao:String, idade:Int) {
         var nome:String = nome
         var funcao:String = funcao
