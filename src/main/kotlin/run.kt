@@ -161,9 +161,24 @@ fun main() {
 
 
     // MAPS (encontra um VALOR utilizando sua CHAVE correspondente)
+    val mapaNomes = mapOf(1 to "rafael", 2 to "marcos")
+    // o 1 é a chave e o "rafael" é o valor da chave 1
+    println("o mapa imutavel é: $mapaNomes")
+
+    //MUTABLE MAPS
+    val mutavelMapa = mutableMapOf(1 to "rafael", 2 to "marcos")
+    mutavelMapa[3] = "ricardo"
+    /* também a chave pode ser uma string e não um numero. exemplo, poderia ser:
+    mutavelMapa["c"] = 3 ; ou seja a chave c ganhou o valor de 3 */
 
 
+    mutavelMapa[4] = "bruno"
+    println("nosso mapa mutavel agora tem mais dois elementos: $mutavelMapa")
+    mutavelMapa.remove(2)
+    println("agora removemos o elemento 2 do nosso mapa: $mutavelMapa")
 
+    //para imprimir o valor de uma chave
+    println("o valor da chave 1 é: ${mutavelMapa[1]}")
 
     // KOTLIN CLASSES
 }
