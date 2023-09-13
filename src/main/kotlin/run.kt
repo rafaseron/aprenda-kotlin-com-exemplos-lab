@@ -58,10 +58,14 @@ fun main() {
 
     // FOR LOOPS IS THE BEST WAY TO JUMP THROUGH OF THE ELEMENTS
     // agora que já vimos como checkar se um elemento existe em um array, vamos então percorre-lo por completo
-    println("PERCORRENDO O ARRAY INTEIRO UTILIZANDO FOR")
+    println("precisamos iterar um array para imprimir seus valores: $nomes")
+    //percebe-se que ele imprime o endereço de memória e não o valor dos indices
+    //ou seja precisamos iterar para imprimir os valores de um array
+    println("PERCORRENDO (iterando) O ARRAY INTEIRO UTILIZANDO FOR")
     for (i in nomes) {
         println(i)
     }
+
 
     //RANGES só pra brincar ne
     for (i in 'a'..'z') {
@@ -100,6 +104,9 @@ fun main() {
     a qual você precisa */
 
     // LISTAS (literalmente uma lista)
+    /* listas se parecem com um Array, mas a diferença é que não precisamos iterar com
+    um For para mostrar seus valores. Listas são mais faceis de trabalhar e muito versáteis
+    quando trabalhamos com uma mutableList */
     val listNomes = listOf("rafael", "marcos", "adalberto") //é igual um Array
     println("nesta lista temos: $listNomes")
 
@@ -125,15 +132,37 @@ fun main() {
         println("existe marcos dentro desta lista")
     }
 
+    // também da para fazer uma lista não estática
+    //MUTABLE LIST
+    val mutavelNomes = mutableListOf("ricardo", "bruno", "douglas")
+    mutavelNomes.add("jonas")
+    println("agora na nossa lista temos um nome a mais! $mutavelNomes")
+    mutavelNomes.remove("bruno")
+    println("agora removemos o bruno da lista: $mutavelNomes")
+
+
+
     // SETS (como um saco de bolinhas de gude diferentes)
     /* é um conjunto de mesmo tipo de dados, não pode se repetir
     e não importa a ordem */
 
+    val setNomes = setOf("rafael", "marcos", "adalberto", "rafael")
+    println("este é o nosso conjunto de nomes: $setNomes")
+    //repare que o rafael se repetiu, mas não apareceu no conjunto
+    //isso porque o set não aceita repetição de elementos
 
+    println("o tamanho do nosso conjunto é: ${setNomes.size}")
+    println("o primeiro elemento do conjunto é: ${setNomes.first()}")
+    /* conjunto não importa a ordem. por isso não tem como usar
+    ${setNomes[0]}. No caso temos funções de apoio first e last */
+    println("o ultimo elemento do conjunto é: ${setNomes.last()}")
 
+    println("o indice do elemento rafael é: ${setNomes.indexOf("rafael")}")
 
 
     // MAPS (encontra um VALOR utilizando sua CHAVE correspondente)
+
+
 
 
     // KOTLIN CLASSES
