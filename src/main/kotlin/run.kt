@@ -189,7 +189,7 @@ fun main() {
         irá receber um valor inteiro e não armazenar nada por padrão */
     }
 
-    // VAMOS INTANCIAR A CLASSE Empregado() NO OBJETO rafael
+    // VAMOS INSTANCIAR A CLASSE Empregado() NO OBJETO rafael
     val rafael = Empregado()
 
     // a partir deste momento, rafael ganhou todos os atributos da classe
@@ -211,7 +211,7 @@ fun main() {
         var idade:Int = idade
     }
 
-    // VAMOS INTANCIAR A CLASSE Empregado2() NO OBJETO marcos
+    // VAMOS INSTANCIAR A CLASSE Empregado2() NO OBJETO marcos
     val marcos = Empregado2("marcos", "programador", 23)
     /* quando instanciamos em um objeto, SOMOS OBRIGADOS a passar TODOS os argumentos
 que são solicitados nos parametros, EM ORDEM (se não em ordem, devem ser NOMEADOS) */
@@ -229,14 +229,14 @@ que são solicitados nos parametros, EM ORDEM (se não em ordem, devem ser NOMEA
     //aqui as variaveis do construtor são criadas no proprio construtor:
     class Empregado3(var nome:String, var funcao:String, var idade:Int)
 
-    // VAMOS INTANCIAR A CLASSE Empregado3() NO OBJETO ricardo
+    // VAMOS INSTANCIAR A CLASSE Empregado3() NO OBJETO ricardo
     val ricardo = Empregado3("ricardo", "programador", 23)
     println("o nome do empregado é: ${ricardo.nome} sua idade é ${ricardo.idade} e sua função é ${ricardo.funcao}")
 
     // VAMOS CRIAR UMA CLASSE COM CONSTRUTOR SIMPLIFICADO E COM VALORES PADRÃO
     class Empregado4(var nome:String, var funcao:String, var idade:Int = 0)
 
-    // VAMOS INTANCIAR A CLASSE Empregado4() NO OBJETO bruno
+    // VAMOS INSTANCIAR A CLASSE Empregado4() NO OBJETO bruno
     val bruno = Empregado4("bruno", "programador")
     println("o nome do empregado é: ${bruno.nome} sua idade é ${bruno.idade} e sua função é ${bruno.funcao}")
 
@@ -258,7 +258,7 @@ que são solicitados nos parametros, EM ORDEM (se não em ordem, devem ser NOMEA
         }
     }
 
-    // VAMOS INTANCIAR A CLASSE Empregado5() NO OBJETO douglas
+    // VAMOS INSTANCIAR A CLASSE Empregado5() NO OBJETO douglas
     val douglas = Empregado5("douglas", "programador")
     println("o nome do empregado é: ${douglas.nome} sua idade é ${douglas.idade} e sua função é ${douglas.funcao}")
     douglas.trabalhar()
