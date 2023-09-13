@@ -90,6 +90,9 @@ fun main() {
     println("agora vamos testar a função que retorna resultados")
     val resultado = soma(5,2)
     println(resultado)
+    //instanciando a função direto no println
+    println("agora vamos instanciar a função direto no println")
+    println(soma(5,2))
 
     // COLEÇÕES EM KOTLIN
 
