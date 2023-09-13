@@ -181,4 +181,106 @@ fun main() {
     println("o valor da chave 1 é: ${mutavelMapa[1]}")
 
     // KOTLIN CLASSES
+    //CRIANDO UMA CLASSE
+    class Empregado {
+        var nome:String = "" //percebe-se que "" é ausencia de valor e não nulidade
+        var funcao:String = ""
+        var idade:Int = 0 /* temos que armazenar alguma coisa, não tem como falar que apenas
+        irá receber um valor inteiro e não armazenar nada por padrão */
+    }
+
+    // VAMOS INTANCIAR A CLASSE Empregado() NO OBJETO rafael
+    val rafael = Empregado()
+
+    // a partir deste momento, rafael ganhou todos os atributos da classe
+    // ou seja agora iremos então definir valores nestes atributos
+    rafael.nome = "rafael"
+    rafael.idade = 23
+    rafael.funcao = "entregador"
+    println("o nome do empregado é: ${rafael.nome} sua idade é ${rafael.idade} e sua função é ${rafael.funcao}")
+
+    /* claro que seria mais conveniente o nome do objeto ser: {pessoa1}
+    foi dado o nome do objeto de {rafael} apenas para ficar mais didatico com sua realidade
+     */
+
+    // VAMOS CRIAR UMA CLASSE COM CONSTRUTOR
+    class Empregado2(nome:String, funcao:String, idade:Int) {
+        var nome:String = nome
+        var funcao:String = funcao
+        var idade:Int = idade
+    }
+
+    // VAMOS INTANCIAR A CLASSE Empregado2() NO OBJETO marcos
+    val marcos = Empregado2("marcos", "programador", 23)
+    /* quando instanciamos em um objeto, SOMOS OBRIGADOS a passar TODOS os argumentos
+que são solicitados nos parametros, EM ORDEM (se não em ordem, devem ser NOMEADOS) */
+
+    //EXEMPLO DE ARGUMENTOS NOMEADOS (RETIRAR // PARA RODAR O CODIGO)
+    //val marcos = Empregado2(nome = "marcos", idade = 23, funcao = "programador")
+
+    println("o nome do empregado é: ${marcos.nome} sua idade é ${marcos.idade} e sua função é ${marcos.funcao}")
+
+
+    // ----------------------------------------------------------
+
+
+    // VAMOS CRIAR UMA CLASSE COM CONSTRUTOR SIMPLIFICADO
+    //aqui as variaveis do construtor são criadas no proprio construtor:
+    class Empregado3(var nome:String, var funcao:String, var idade:Int)
+
+    // VAMOS INTANCIAR A CLASSE Empregado3() NO OBJETO ricardo
+    val ricardo = Empregado3("ricardo", "programador", 23)
+    println("o nome do empregado é: ${ricardo.nome} sua idade é ${ricardo.idade} e sua função é ${ricardo.funcao}")
+
+    // VAMOS CRIAR UMA CLASSE COM CONSTRUTOR SIMPLIFICADO E COM VALORES PADRÃO
+    class Empregado4(var nome:String, var funcao:String, var idade:Int = 0)
+
+    // VAMOS INTANCIAR A CLASSE Empregado4() NO OBJETO bruno
+    val bruno = Empregado4("bruno", "programador")
+    println("o nome do empregado é: ${bruno.nome} sua idade é ${bruno.idade} e sua função é ${bruno.funcao}")
+
+
+    // -------------------------------------------------------
+
+
+    // VAMOS CRIAR UMA CLASSE COM CONSTRUTOR SIMPLIFICADO E COM VALORES PADRÃO
+    /* esse exemplo é pra mostrar que não é porque criamos uma classe com construtor
+    simplificado que não podemos abrir a classe e colocar nosso bloco de código.
+    classes são perfeitas para colocar funções dentro, abuse disso :D  */
+    class Empregado5(var nome:String, var funcao:String, var idade:Int = 0) {
+        fun trabalhar() {
+            println("$nome está trabalhando")
+        }
+        // podemos adicionar mais funcoes, como dormir
+        fun dormir (){
+            println("$nome está dormindo")
+        }
+    }
+
+    // VAMOS INTANCIAR A CLASSE Empregado5() NO OBJETO douglas
+    val douglas = Empregado5("douglas", "programador")
+    println("o nome do empregado é: ${douglas.nome} sua idade é ${douglas.idade} e sua função é ${douglas.funcao}")
+    douglas.trabalhar()
+    douglas.dormir()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
