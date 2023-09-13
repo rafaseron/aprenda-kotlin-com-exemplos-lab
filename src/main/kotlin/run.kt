@@ -1,9 +1,10 @@
 fun main() {
     //readln test
     var testeNome = readln()
+    //digite marcos para passar em todos os testes
     println("seu nome é $testeNome")
 
-  //CONDIÇÕES
+    //CONDIÇÕES
 
     //if test
     if (testeNome == "rafael") {
@@ -16,12 +17,12 @@ fun main() {
     when (testeNome){
         "rafael" -> println("meu nome também eh rafael :D (usando when)")
         "marcos" -> println("prazer marcos, meu nome é rafael (usando when)")
-         else -> {
-             println("poxa você não se chama rafael nem marcos, mas tabom né (usando when).")
+        else -> {
+            println("poxa você não se chama rafael nem marcos, mas tabom né (usando when).")
         }
     }
 
-  //LOOPS
+    //LOOPS
     while (testeNome != "marcos"){
         println("apenas um marcos pode continuar executando este programa (usando while)")
         println("esta é a ultima chance para você se chamar marcos: ")
@@ -34,7 +35,7 @@ fun main() {
         break //break test
     } while(testeNome == "marcos")
 
-  //WORKING WITH ARRAYS
+    //WORKING WITH ARRAYS
     val nomes = arrayOf("rafael", "marcos", "adalberto")
     print("o primeiro nome (elemento 0) é: ")
     println(nomes[0])
@@ -55,7 +56,7 @@ fun main() {
         println("rafael não existe mais no nosso banco de dados")
     }
 
-  // FOR LOOPS IS THE BEST WAY TO JUMP THROUGH OF THE ELEMENTS
+    // FOR LOOPS IS THE BEST WAY TO JUMP THROUGH OF THE ELEMENTS
     // agora que já vimos como checkar se um elemento existe em um array, vamos então percorre-lo por completo
     println("PERCORRENDO O ARRAY INTEIRO UTILIZANDO FOR")
     for (i in nomes){
