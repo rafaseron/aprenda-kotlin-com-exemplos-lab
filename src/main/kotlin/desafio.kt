@@ -20,6 +20,19 @@ data class Formacao(val nome: String, var conteudos: List<Curso>) {
         inscritos.remove(usuario)
         println("$usuario se desmatriculou com sucesso")
     }
+    fun mostrar (){
+        println("estes são todos os incritos na formação $nome: $inscritos")
+        /* essa funcao eu criei de acordo com meus conhecimentos e fora do padrao
+        que foram criadas as outras funcoes. Você precisa entender a diferença entre
+        criar uma função deste modo e do outro modo (passando um argumento)
+        - porque precisa passar um argumento? (sendo que na verdade o conteudo inteiro
+        da classe estaria acessivel para todas as funcoes dentro da classe)
+
+        - insight: o argumento precisa ser "usuario: Usuario" porque se não seria passada
+        a lista como argumento desta maneira -> "inscritos: MutableListOf" (e isso não
+        existe na linguagem. enfim, tu pode ler como algo assim para entender
+         */
+    }
 }
 //voce vai ter que testar como adicionar um novo USUARIO a LISTA de inscritos
 // como será que funciona esta linha "val inscritos = mutableListOf<Usuario>() ???
@@ -44,7 +57,12 @@ fun main() {
 
     // CONSELHO: REVER estes conteudos e retornar posteriormente !!
 
-
+val android = Formacao("Android Developer", listOf())
+    android.matricular(user1)
+    android.mostrar()
+    /* Agora, a lista inscritos dentro do objeto android contém um usuário.
+    Você pode acessar, remover, ou realizar outras operações com esses objetos de
+    usuário dentro da lista conforme necessário. */
 
 
 }
