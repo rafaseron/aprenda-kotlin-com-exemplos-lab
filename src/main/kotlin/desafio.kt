@@ -28,6 +28,9 @@ data class Formacao(val nome: String, var conteudos: List<Curso>) {
 /* você vai ter que ver como adicionar uma função que irá somar a duração
 de todos os Cursos existentes na Formação, para dar a duração total da Formação */
 
+/* você vai ter que ver como adicionar o Nivel de dificuldade (que é uma enum class)
+no Curso e na Formacao */
+
 fun main() {
     //DONE: TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
     TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
