@@ -1,10 +1,5 @@
-// [Template no Kotlin Playground](https://pl.kotl.in/WcteahpyN)
-
 enum class Nivel { BASICO, INTERMEDIARIO, AVANÇADO }
-
-class Usuario (val nome:String, val idade:Int, val sexo:String){
-
-}
+class Usuario (val nome:String, val idade:Int, val sexo:String)
 
 /* a classe ConteudosEducacionais foi renomeada para Curso, para condizer com o
 conteúdo do site. Uma Formação é um conjunto de Cursos. A duração da Formação
@@ -19,6 +14,9 @@ data class Formacao(val nome: String, var conteudos: List<Curso>) {
     fun matricular(usuario: Usuario) {
         inscritos.add(usuario)
         println("$usuario se matriculou com sucesso!")
+    }
+    fun desmatricular (usuario:Usuario){
+        inscritos.remove(usuario)
     }
 }
 //voce vai ter que testar como adicionar um novo USUARIO a LISTA de inscritos
