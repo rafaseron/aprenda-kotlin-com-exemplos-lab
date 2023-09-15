@@ -15,17 +15,20 @@ data class Modulo (var nome: String, val duracao: Int){
 
 data class Formacao(val nome: String, var conteudos: List<Modulo>) {
     val inscritos = mutableListOf<Usuario>()
+    val conteudos2 = mutableListOf<Modulo>()
     //lista mutavel criada especificamente para armazenar objetos da classe Usuario
-    
+
     fun matricular(usuario: Usuario) {
         inscritos.add(usuario)
         println("$usuario se matriculou com sucesso!")
     }
-    fun desmatricular (usuario:Usuario){
+
+    fun desmatricular(usuario: Usuario) {
         inscritos.remove(usuario)
         println("$usuario se desmatriculou com sucesso")
     }
-    fun mostrar (){
+
+    fun mostrar() {
         println("estes são todos os incritos na formação $nome: $inscritos")
         /* essa funcao eu criei de acordo com meus conhecimentos e fora do padrao
         que foram criadas as outras funcoes. Você precisa entender a diferença entre
@@ -38,9 +41,18 @@ data class Formacao(val nome: String, var conteudos: List<Modulo>) {
         existe na linguagem. enfim, tu pode ler como algo assim para entender
          */
     }
-    fun matrizCurricular (){
+
+    fun matrizCurricular() {
         println("A matriz curricular da Formação $nome é: $conteudos")
 
+    }
+
+    fun adicionarModulo(modulo: Modulo) {
+        conteudos2.add(modulo)
+        println("$modulo foi adicionado com sucesso")
+    }
+    fun mostrarModulo(){
+        println(conteudos2)
     }
 }
 //voce vai ter que testar como adicionar um novo USUARIO a LISTA de inscritos
@@ -83,6 +95,9 @@ val android = Formacao("Android Developer", listOf(modulo1, modulo2, modulo3, mo
     println("agora vamos desmatricular o $user2")
     android.desmatricular(user2)
     android.mostrar()
+    android.adicionarModulo(Modulo("teste", 1))
+    android.adicionarModulo(Modulo("test2", 2))
+    android.mostrarModulo()
     /* Agora, a lista inscritos dentro do objeto android contém um usuário.
     Você pode acessar, remover, ou realizar outras operações com esses objetos de
     usuário dentro da lista conforme necessário. */
