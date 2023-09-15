@@ -9,10 +9,11 @@ Um Modulo é o conjunto de Cursos. Um Conjunto de Modulos é uma Formação.
 Vamos trabalhar então com modulos para ficar mais facil (são 26 cursos, vai dar mais
 trabalho manual trabalhar com Cursos diretamente)
  */
-data class Modulo (var nome: String, val duracao: Int = 1)
+data class Modulo (var nome: String, val duracao: Int){
+
+}
 
 data class Formacao(val nome: String, var conteudos: List<Modulo>) {
-
     val inscritos = mutableListOf<Usuario>()
     //lista mutavel criada especificamente para armazenar objetos da classe Usuario
     
@@ -37,6 +38,10 @@ data class Formacao(val nome: String, var conteudos: List<Modulo>) {
         existe na linguagem. enfim, tu pode ler como algo assim para entender
          */
     }
+    fun matrizCurricular (){
+        println("A matriz curricular da Formação $nome é: $conteudos")
+
+    }
 }
 //voce vai ter que testar como adicionar um novo USUARIO a LISTA de inscritos
 // como será que funciona esta linha "val inscritos = mutableListOf<Usuario>() ???
@@ -51,8 +56,17 @@ fun main() {
     //TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
     /* você precisará criar uma lista de Curso para adicionar em Formacao */
 
+
+    //instanciando os modulos
+    val modulo1 = Modulo("Desmistificando a Linguagem de Programação Kotlin", 8)
+    val modulo2 = Modulo("Fundamentos de Desenvolvimento Mobile Nativo Para Android", 5)
+    val modulo3 = Modulo("Noções Básicas do Android com Kotlin", 7)
+    val modulo4 = Modulo("Dominando o Android Jetpack", 11)
+
     //criando um objeto
     val user1 = Usuario("joao", 27, "masculino")
+    val user2 = Usuario("albertina", 23, "feminino")
+    val user3 = Usuario("vicente", 19, "masculino")
     /* agora ao instanciar um objeto da classe Usuario, ta te faltando base
     para entender a relação entre a Data class e a classe Usuario (uma classe normal) */
 
@@ -60,9 +74,14 @@ fun main() {
     se relacionar com uma Data class Curso e/ou com a Data class Formacao */
 
     // CONSELHO: REVER estes conteudos e retornar posteriormente !!
-
-val android = Formacao("Android Developer", listOf())
+val android = Formacao("Android Developer", listOf(modulo1, modulo2, modulo3, modulo4))
     android.matricular(user1)
+    android.matricular(user2)
+    android.matricular(user3)
+    android.mostrar()
+    android.matrizCurricular()
+    println("agora vamos desmatricular o $user2")
+    android.desmatricular(user2)
     android.mostrar()
     /* Agora, a lista inscritos dentro do objeto android contém um usuário.
     Você pode acessar, remover, ou realizar outras operações com esses objetos de
