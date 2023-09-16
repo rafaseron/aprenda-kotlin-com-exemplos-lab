@@ -1,5 +1,5 @@
 enum class Nivel { BASICO, INTERMEDIARIO, AVANÇADO }
-class Usuario (val nome:String, val idade:Int, val sexo:String)
+data class Usuario (val nome:String, val idade:Int, val sexo:String)
 
 /* a classe ConteudosEducacionais foi renomeada para Curso, para condizer com o
 conteúdo do site. Uma Formação é uma soma de Cursos (que podem ser
@@ -9,9 +9,7 @@ Um Modulo é o conjunto de Cursos. Um Conjunto de Modulos é uma Formação.
 Vamos trabalhar então com modulos para ficar mais facil (são 26 cursos, vai dar mais
 trabalho manual trabalhar com Cursos diretamente)
  */
-data class Modulo (var nome: String, val duracao: Int){
-
-}
+ data class Modulo (var nome: String, val duracao: Int)
 
 data class Formacao(val nome: String, var conteudos: List<Modulo>) {
     val inscritos = mutableListOf<Usuario>()
