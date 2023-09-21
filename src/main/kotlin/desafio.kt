@@ -84,7 +84,12 @@ fun main() {
     se relacionar com uma Data class Curso e/ou com a Data class Formacao */
 
     // CONSELHO: REVER estes conteudos e retornar posteriormente !!
+
+
 val android = Formacao("Android Developer", listOf(modulo1, modulo2, modulo3, modulo4))
+    /* teria como fazer essa implementacao de cima direto, mas ia ficar muito poluido.
+    Exemplo: val android = Formacao ("Android Developer", listOf(("modulo 1", 8)("modulo 2", 5)("modulo 3", 7)("modulo 4", 11)))
+     */
     android.matricular(user1)
     android.matricular(user2)
     android.matricular(user3)
