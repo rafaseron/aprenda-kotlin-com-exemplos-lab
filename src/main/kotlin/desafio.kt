@@ -1,4 +1,8 @@
-enum class Nivel { BASICO, INTERMEDIARIO, AVANÇADO }
+enum class Nivel{
+    BASICO,
+    INTERMEDIARIO,
+    AVANÇADO
+}
 data class Usuario (val nome:String, val idade:Int, val sexo:String)
 
 /* a classe ConteudosEducacionais foi renomeada para Curso, para condizer com o
@@ -49,8 +53,12 @@ data class Formacao(val nome: String, var conteudos: List<Modulo>) {
         conteudos2.add(modulo)
         println("$modulo foi adicionado com sucesso")
     }
+    fun removerModulo (modulo: Modulo){
+        conteudos2.remove(modulo)
+        println("$modulo foi removido com sucesso")
+    }
     fun mostrarModulo(){
-        println(conteudos2)
+        println(" aqui está todos os modulos por mutableList${conteudos2}")
     }
 }
 //voce vai ter que testar como adicionar um novo USUARIO a LISTA de inscritos
@@ -69,9 +77,13 @@ fun main() {
 
     //instanciando os modulos
     val modulo1 = Modulo("Desmistificando a Linguagem de Programação Kotlin", 8)
+    val dificuldade1 = Nivel.BASICO
     val modulo2 = Modulo("Fundamentos de Desenvolvimento Mobile Nativo Para Android", 5)
+    val dificuldade2 = Nivel.BASICO
     val modulo3 = Modulo("Noções Básicas do Android com Kotlin", 7)
+    val dificuldade3 = Nivel.INTERMEDIARIO
     val modulo4 = Modulo("Dominando o Android Jetpack", 11)
+    val dificuldade4 = Nivel.AVANÇADO
 
     //criando um objeto
     val user1 = Usuario("joao", 27, "masculino")
@@ -87,9 +99,23 @@ fun main() {
 
 
 val android = Formacao("Android Developer", listOf(modulo1, modulo2, modulo3, modulo4))
+    //aqui é o PRIMEIRO EXEMPLO, modo padrão do projeto (Lista imutavel para os modulos)
     /* teria como fazer essa implementacao de cima direto, mas ia ficar muito poluido.
     Exemplo: val android = Formacao ("Android Developer", listOf(("modulo 1", 8)("modulo 2", 5)("modulo 3", 7)("modulo 4", 11)))
      */
+
+
+    /* COMO FOI UM APRENDIZADO PARA MIM A FORMA COMO FOI TRABALHADO NO PROJETO
+    A COMO FAZER O CODIGO ENTENDER A RELAÇÃO ENTRE AS COLEÇÕES E UMA DATA CLASS,
+    ENTÃO TRABALHEI DE DUAS FORMAS:
+    - UTILIZANDO UMA LISTA MUTAVEL E PASSANDO OS OBJETOS PRO CONSTRUTOR DA
+    CLASSE "Formacoes" (forma padrão do projeto)
+    - UTILIZANDO UMA LISTA IMUTAVEL PARA PODER ENTÃO ADICIONAR, REMOVER E MANIPULAR
+    DE FORMA NÃO CONSTANTE OS MODULOS CONTIDOS EM UMA INSTANCIA DA CLASSE Formacao
+    (modo que particularmente achei mais legal de trabalhar)
+     */
+
+    //aqui é o trabalho com uma mutableList para inscritos da instancia da Formacao
     android.matricular(user1)
     android.matricular(user2)
     android.matricular(user3)
@@ -98,8 +124,14 @@ val android = Formacao("Android Developer", listOf(modulo1, modulo2, modulo3, mo
     println("agora vamos desmatricular o $user2")
     android.desmatricular(user2)
     android.mostrar()
-    android.adicionarModulo(Modulo("teste", 1))
-    android.adicionarModulo(Modulo("test2", 2))
+
+
+
+    //aqui é o SEGUNDO EXEMPLO: mutableList para trabalhar com os modulos da Formacao
+    android.adicionarModulo(Modulo("teste1", 1))
+    android.adicionarModulo(Modulo("teste2", 2))
+    android.mostrarModulo()
+    android.removerModulo(Modulo("teste1", 1))
     android.mostrarModulo()
     /* Agora, a lista inscritos dentro do objeto android contém um usuário.
     Você pode acessar, remover, ou realizar outras operações com esses objetos de
