@@ -264,6 +264,13 @@ que são solicitados nos parametros, EM ORDEM (se não em ordem, devem ser NOMEA
     douglas.trabalhar()
     douglas.dormir()
 
+    // DATA CLASS
+
+
+    // ENUM CLASS
+
+    // SEALED CLASS
+
 
 
 
